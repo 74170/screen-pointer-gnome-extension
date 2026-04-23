@@ -1,0 +1,9 @@
+{
+  "uuid": "screen-pointer@stepo",
+  "name": "Screen Pointer Spotlight",
+  "description": "Dims the full screen except for a configurable area around the mouse pointer.",
+  "shell-version": [
+    "46"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.screen-pointer"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.screen-pointer" path="/org/gnome/shell/extensions/screen-pointer/">
+    <key name="toggle-spotlight" type="as">
+      <default><![CDATA[['<Super>']]]></default>
+      <summary>Spotlight modifier combination</summary>
+      <description>Modifier combination that keeps the spotlight visible while held down.</description>
+    </key>
+    <key name="focus-width" type="i">
+      <default>260</default>
+      <summary>Focus width</summary>
+      <description>Width in pixels of the undimmed area around the pointer.</description>
+    </key>
+    <key name="focus-height" type="i">
+      <default>180</default>
+      <summary>Focus height</summary>
+      <description>Height in pixels of the undimmed area around the pointer.</description>
+    </key>
+    <key name="dim-opacity" type="i">
+      <default>75</default>
+      <summary>Dim opacity</summary>
+      <description>Opacity percentage for the dark overlay.</description>
+    </key>
+    <key name="edge-softness" type="i">
+      <default>56</default>
+      <summary>Edge softness</summary>
+      <description>Width in pixels of the soft transition around the spotlight area.</description>
+    </key>
+  </schema>
+</schemalist>
