@@ -42,6 +42,7 @@ class SpotlightOverlay {
         this._pointerX = 0;
         this._pointerY = 0;
         this._modifierMask = 0;
+        this._repaintSignalId = 0;
 
         this._drawingArea = new St.DrawingArea({
             reactive: false,
@@ -49,7 +50,7 @@ class SpotlightOverlay {
             x: 0,
             y: 0,
         });
-        this._drawingArea.connect('repaint', area => this._repaint(area));
+        this._repaintSignalId = this._drawingArea.connect('repaint', area => this._repaint(area));
 
         this._settingsSignals = SETTINGS_KEYS.map(key =>
             this._settings.connect(`changed::${key}`, () => {
@@ -97,6 +98,11 @@ class SpotlightOverlay {
 
         this._settingsSignals.forEach(signalId => this._settings.disconnect(signalId));
         this._settingsSignals = [];
+
+        if (this._repaintSignalId !== 0) {
+            this._drawingArea.disconnect(this._repaintSignalId);
+            this._repaintSignalId = 0;
+        }
 
         this._drawingArea.destroy();
         this._drawingArea = null;
